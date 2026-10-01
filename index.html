@@ -1,1 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Nama Website</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f0e6;
+            color: #29251f;
+        }
+
+        /* HEADER */
+        header {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 18px;
+            background: #fffdf8;
+            border-bottom: 1px solid #ddd5c8;
+        }
+
+        .menu-button,
+        .theme-button {
+            border: none;
+            background: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: inherit;
+            width: 45px;
+            height: 45px;
+        }
+
+        .site-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* SEARCH */
+        .search-container {
+            padding: 20px 16px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1px solid #d5cec2;
+            border-radius: 8px;
+            background: #fffdf8;
+            color: #29251f;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box:focus {
+            border-color: #999;
+        }
+
+        /* CONTENT */
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 0 16px 40px;
+        }
+
+        .section-title {
+            font-size: 21px;
+            margin: 15px 0;
+        }
+
+        .novel-box {
+            background: #fffdf8;
+            border: 1px solid #ddd5c8;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .novel-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .novel-info {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            margin-top: 30px;
+            border-top: 1px solid #ddd5c8;
+            background: #fffdf8;
+        }
+
+        footer .footer-title {
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        footer .copyright {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* DESKTOP */
+        @media (min-width: 768px) {
+            header {
+                height: 68px;
+                padding: 0 30px;
+            }
+
+            .site-title {
+                font-size: 22px;
+            }
+
+            .search-container {
+                max-width: 900px;
+                margin: auto;
+                padding: 25px 16px;
+            }
+
+            main {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <button class="menu-button" aria-label="Menu">
+            ☰
+        </button>
+
+        <div class="site-title">
+            Nama Website
+        </div>
+
+        <button class="theme-button" aria-label="Light/Dark Mode">
+            ☀
+        </button>
+
+    </header>
+
+
+    <!-- SEARCH -->
+    <div class="search-container">
+
+        <input
+            type="search"
+            class="search-box"
+            placeholder="Cari judul novel..."
+        >
+
+    </div>
+
+
+    <!-- CONTENT -->
+    <main>
+
+        <!-- NOVEL RANDOM -->
+        <section>
+
+            <h2 class="section-title">
+                Novel Random
+            </h2>
+
+            <div class="novel-box">
+                <div class="novel-title">
+                    Contoh Novel Pertama
+                </div>
+
+                <div class="novel-info">
+                    Chapter 25 • Fantasy • On-going
+                </div>
+            </div>
+
+            <div class="novel-box">
+                <div class="novel-title">
+                    Contoh Novel Kedua
+                </div>
+
+                <div class="novel-info">
+                    Chapter 48 • Romance • Completed
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- LATEST UPDATE -->
+        <section>
+
+            <h2 class="section-title">
+                Latest Update
+            </h2>
+
+            <div class="novel-box">
+                <div class="novel-title">
+                    Contoh Novel Pertama
+                </div>
+
+                <div class="novel-info">
+                    Chapter 26 • Update terbaru
+                </div>
+            </div>
+
+            <div class="novel-box">
+                <div class="novel-title">
+                    Contoh Novel Ketiga
+                </div>
+
+                <div class="novel-info">
+                    Chapter 12 • Update terbaru
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-title">
+            Nama Website
+        </div>
+
+        <div>
+            <a href="index.html">Home</a>
+            •
+            <a href="#">Donasi</a>
+        </div>
+
+        <div class="copyright">
+            © 2026 Nama Website
+        </div>
+
+    </footer>
+
+</body>
+</html>
