@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>CN Novel-Translation</title>
 
+
     <style>
+
+        /* =========================
+           DASAR
+        ========================= */
+
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -16,358 +29,930 @@
             font-family: Arial, sans-serif;
             background: #f5f0e6;
             color: #29251f;
+            transition: background 0.25s ease,
+                        color 0.25s ease;
         }
 
-        /* HEADER */
+
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
             height: 60px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
+
             padding: 0 18px;
+
             background: #fffdf8;
+
             border-bottom: 1px solid #ddd5c8;
+
+            position: relative;
+
+            z-index: 2000;
+
+            transition: background 0.25s ease,
+                        border-color 0.25s ease;
         }
+
 
         .menu-button,
         .theme-button {
-            border: none;
-            background: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: inherit;
+
             width: 45px;
             height: 45px;
+
+            border: none;
+
+            background: transparent;
+
+            color: inherit;
+
+            font-size: 24px;
+
+            cursor: pointer;
+
+            border-radius: 8px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: background 0.2s ease;
         }
+
+
+        .menu-button:hover,
+        .theme-button:hover {
+
+            background: rgba(0, 0, 0, 0.06);
+
+        }
+
 
         .site-title {
+
             font-size: 20px;
+
             font-weight: bold;
+
             text-align: center;
+
+            white-space: nowrap;
+
         }
 
-        /* SEARCH */
-        .search-container {
-            padding: 20px 16px;
+
+        /* =========================
+           MENU NAVIGASI
+        ========================= */
+
+        .navigation-menu {
+
+            display: none;
+
+            position: absolute;
+
+            top: 60px;
+
+            left: 10px;
+
+            width: 230px;
+
+            background: #fffdf8;
+
+            border: 1px solid #ddd5c8;
+
+            border-radius: 10px;
+
+            padding: 8px 0;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.12);
+
+            z-index: 3000;
+
+            overflow: hidden;
+
         }
+
+
+        .navigation-menu.active {
+
+            display: block;
+
+        }
+
+
+        .navigation-menu a,
+        .menu-link {
+
+            display: flex;
+
+            width: 100%;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 13px 16px;
+
+            border: none;
+
+            background: transparent;
+
+            color: #29251f;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            text-align: left;
+
+            cursor: pointer;
+
+        }
+
+
+        .navigation-menu a:hover,
+        .menu-link:hover {
+
+            background: #f3eee5;
+
+        }
+
+
+        .menu-item {
+
+            position: relative;
+
+        }
+
+
+        .submenu {
+
+            display: none;
+
+            padding: 0 0 5px 15px;
+
+        }
+
+
+        .menu-item.active .submenu {
+
+            display: block;
+
+        }
+
+
+        .submenu a {
+
+            font-size: 15px;
+
+            padding: 10px 16px;
+
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .search-container {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 20px 16px;
+
+        }
+
 
         .search-box {
+
             width: 100%;
+
             padding: 13px 16px;
+
             border: 1px solid #d5cec2;
+
             border-radius: 8px;
+
             background: #fffdf8;
+
             color: #29251f;
+
             font-size: 16px;
+
             outline: none;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease;
+
         }
+
 
         .search-box:focus {
+
             border-color: #999;
+
         }
 
-        /* CONTENT */
+
+        /* =========================
+           KONTEN
+        ========================= */
+
         main {
+
             max-width: 900px;
+
             margin: auto;
+
             padding: 0 16px 40px;
+
         }
+
 
         .section-title {
+
             font-size: 21px;
+
             margin: 15px 0;
+
         }
+
 
         .novel-box {
+
             background: #fffdf8;
+
             border: 1px solid #ddd5c8;
+
             border-radius: 10px;
+
             padding: 16px;
+
             margin-bottom: 12px;
+
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease;
+
         }
+
 
         .novel-title {
+
             font-size: 18px;
+
             font-weight: bold;
+
             margin-bottom: 6px;
+
         }
+
 
         .novel-info {
+
             font-size: 14px;
+
             color: #777;
+
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
+
             text-align: center;
+
             padding: 30px 15px;
+
             margin-top: 30px;
+
             border-top: 1px solid #ddd5c8;
+
             background: #fffdf8;
+
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease;
+
         }
+
 
         footer .footer-title {
+
             font-weight: bold;
+
             margin-bottom: 12px;
+
         }
+
 
         footer a {
+
             color: inherit;
+
             text-decoration: none;
+
         }
+
+
+        footer a:hover {
+
+            text-decoration: underline;
+
+        }
+
 
         footer .copyright {
+
             margin-top: 12px;
+
             font-size: 14px;
+
             color: #777;
+
         }
 
-        /* DESKTOP */
+
+        /* =========================
+           TEMA GELAP
+        ========================= */
+
+        body.dark-mode {
+
+            background: #171614;
+
+            color: #eee9df;
+
+        }
+
+
+        body.dark-mode header,
+        body.dark-mode footer,
+        body.dark-mode .novel-box,
+        body.dark-mode .search-box,
+        body.dark-mode .navigation-menu {
+
+            background: #24221f;
+
+        }
+
+
+        body.dark-mode header,
+        body.dark-mode footer,
+        body.dark-mode .novel-box,
+        body.dark-mode .navigation-menu {
+
+            border-color: #403c36;
+
+        }
+
+
+        body.dark-mode .search-box {
+
+            border-color: #403c36;
+
+            color: #eee9df;
+
+        }
+
+
+        body.dark-mode .navigation-menu a,
+        body.dark-mode .menu-link {
+
+            color: #eee9df;
+
+        }
+
+
+        body.dark-mode .navigation-menu a:hover,
+        body.dark-mode .menu-link:hover {
+
+            background: #302d29;
+
+        }
+
+
+        body.dark-mode .novel-info,
+        body.dark-mode footer .copyright {
+
+            color: #aaa39a;
+
+        }
+
+
+        body.dark-mode .menu-button:hover,
+        body.dark-mode .theme-button:hover {
+
+            background: rgba(255, 255, 255, 0.08);
+
+        }
+
+
+        /* =========================
+           DESKTOP
+        ========================= */
+
         @media (min-width: 768px) {
+
             header {
+
                 height: 68px;
+
                 padding: 0 30px;
+
             }
+
+
+            .navigation-menu {
+
+                top: 68px;
+
+                left: 20px;
+
+            }
+
 
             .site-title {
+
                 font-size: 22px;
+
             }
+
 
             .search-container {
-                max-width: 900px;
-                margin: auto;
+
                 padding: 25px 16px;
+
             }
 
+
             main {
+
                 padding-left: 16px;
+
                 padding-right: 16px;
+
             }
+
         }
+
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- HEADER -->
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
     <header>
 
-        <button class="menu-button" aria-label="Menu">
+
+        <button
+            class="menu-button"
+            aria-label="Buka menu"
+            aria-expanded="false"
+        >
             ☰
         </button>
 
+
         <div class="site-title">
+
             CN Novel-Translation
+
         </div>
 
-        <button class="theme-button" aria-label="Light/Dark Mode">
+
+        <button
+            class="theme-button"
+            aria-label="Ganti tema"
+        >
             ☀
+
         </button>
+
 
     </header>
 
 
-    <!-- NAVIGATION MENU -->
-<nav class="navigation-menu">
 
-    <div class="menu-item menu-novel">
-        <button class="menu-link">
-            Novel
-            <span>›</span>
-        </button>
+    <!-- =========================
+         MENU NAVIGASI
+    ========================== -->
 
-        <div class="submenu">
-            <a href="#">On-going</a>
-            <a href="#">Completed</a>
-            <a href="#">Hiatus</a>
-            <a href="#">Drop</a>
+    <nav class="navigation-menu">
+
+
+        <div class="menu-item menu-novel">
+
+
+            <button class="menu-link">
+
+                <span>Novel</span>
+
+                <span class="novel-arrow">›</span>
+
+            </button>
+
+
+            <div class="submenu">
+
+                <a href="#">On-going</a>
+
+                <a href="#">Completed</a>
+
+                <a href="#">Hiatus</a>
+
+                <a href="#">Drop</a>
+
+            </div>
+
+
         </div>
-    </div>
 
-    <a href="#">Bookmark</a>
 
-    <a href="#">Donasi</a>
+        <a href="#">
 
-    <a href="#">Login</a>
+            Bookmark
 
-</nav>
-    
-    /* NAVIGATION MENU */
+        </a>
 
-.navigation-menu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 10px;
-    width: 220px;
-    background: #fffdf8;
-    border: 1px solid #ddd5c8;
-    border-radius: 10px;
-    padding: 8px 0;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
-    z-index: 1000;
-}
 
-.navigation-menu a,
-.menu-link {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 16px;
-    border: none;
-    background: none;
-    color: #29251f;
-    text-decoration: none;
-    font-size: 16px;
-    text-align: left;
-    cursor: pointer;
-}
+        <a href="#">
 
-.navigation-menu a:hover,
-.menu-link:hover {
-    background: #f3eee5;
-}
+            Donasi
 
-.menu-item {
-    position: relative;
-}
+        </a>
 
-.submenu {
-    display: none;
-    padding-left: 15px;
-}
 
-.submenu a {
-    font-size: 15px;
-    padding: 10px 16px;
-}
+        <a href="#">
 
-/* Saat menu utama dibuka */
-.navigation-menu.active {
-    display: block;
-}
+            Login
 
-/* Saat submenu Novel dibuka */
-.menu-item.active .submenu {
-    display: block;
-}
-    
-    <!-- SEARCH -->
+        </a>
+
+
+    </nav>
+
+
+
+    <!-- =========================
+         SEARCH
+    ========================== -->
+
     <div class="search-container">
+
 
         <input
             type="search"
             class="search-box"
             placeholder="Cari judul novel..."
+            aria-label="Cari judul novel"
         >
+
 
     </div>
 
 
-    <!-- CONTENT -->
+
+    <!-- =========================
+         KONTEN
+    ========================== -->
+
     <main>
 
+
         <!-- NOVEL RANDOM -->
+
         <section>
 
+
             <h2 class="section-title">
+
                 Novel Random
+
             </h2>
 
+
             <div class="novel-box">
+
+
                 <div class="novel-title">
+
                     Contoh Novel Pertama
+
                 </div>
 
+
                 <div class="novel-info">
+
                     Chapter 25 • Fantasy • On-going
+
                 </div>
+
+
             </div>
+
+
 
             <div class="novel-box">
+
+
                 <div class="novel-title">
+
                     Contoh Novel Kedua
+
                 </div>
 
+
                 <div class="novel-info">
+
                     Chapter 48 • Romance • Completed
+
                 </div>
+
+
             </div>
+
 
         </section>
+
 
 
         <!-- LATEST UPDATE -->
+
         <section>
 
+
             <h2 class="section-title">
+
                 Latest Update
+
             </h2>
 
+
             <div class="novel-box">
+
+
                 <div class="novel-title">
+
                     Contoh Novel Pertama
+
                 </div>
 
+
                 <div class="novel-info">
+
                     Chapter 26 • Update terbaru
+
                 </div>
+
+
             </div>
+
+
 
             <div class="novel-box">
+
+
                 <div class="novel-title">
+
                     Contoh Novel Ketiga
+
                 </div>
 
+
                 <div class="novel-info">
+
                     Chapter 12 • Update terbaru
+
                 </div>
+
+
             </div>
+
 
         </section>
+
 
     </main>
 
 
-    <!-- FOOTER -->
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
 
+
         <div class="footer-title">
+
             CN Novel-Translation
+
         </div>
+
 
         <div>
-            <a href="index.html">Home</a>
+
+            <a href="index.html">
+                Home
+            </a>
+
             •
-            <a href="#">Donasi</a>
+
+            <a href="#">
+                Donasi
+            </a>
+
         </div>
+
 
         <div class="copyright">
+
             © Copyright 2026-CN Novel-Translation
+
         </div>
 
-        </footer>
 
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script>
 
-        const menuButton = document.querySelector(".menu-button");
-        const navigationMenu = document.querySelector(".navigation-menu");
+
+        /* =========================
+           MENU UTAMA
+        ========================== */
+
+        const menuButton =
+            document.querySelector(".menu-button");
+
+        const navigationMenu =
+            document.querySelector(".navigation-menu");
+
 
         menuButton.addEventListener("click", function () {
-            navigationMenu.classList.toggle("active");
+
+            const isOpen =
+                navigationMenu.classList.toggle("active");
+
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
         });
 
 
-        const novelMenu = document.querySelector(".menu-novel");
-        const novelButton = novelMenu.querySelector(".menu-link");
+
+        /* =========================
+           SUBMENU NOVEL
+        ========================== */
+
+        const novelMenu =
+            document.querySelector(".menu-novel");
+
+        const novelButton =
+            novelMenu.querySelector(".menu-link");
+
 
         novelButton.addEventListener("click", function () {
+
             novelMenu.classList.toggle("active");
+
         });
+
+
+
+        /* =========================
+           TUTUP MENU SAAT KLIK DI LUAR
+        ========================== */
+
+        document.addEventListener("click", function (event) {
+
+
+            const clickedInsideMenu =
+                navigationMenu.contains(event.target);
+
+
+            const clickedMenuButton =
+                menuButton.contains(event.target);
+
+
+            if (
+                !clickedInsideMenu &&
+                !clickedMenuButton
+            ) {
+
+                navigationMenu.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+
+
+        /* =========================
+           LIGHT / DARK MODE
+        ========================== */
+
+        const themeButton =
+            document.querySelector(".theme-button");
+
+
+        function updateThemeIcon() {
+
+
+            if (
+                document.body.classList.contains("dark-mode")
+            ) {
+
+                themeButton.textContent = "☾";
+
+            } else {
+
+                themeButton.textContent = "☀";
+
+            }
+
+        }
+
+
+        themeButton.addEventListener("click", function () {
+
+
+            document.body.classList.toggle("dark-mode");
+
+
+            const darkMode =
+                document.body.classList.contains("dark-mode");
+
+
+            localStorage.setItem(
+                "theme",
+                darkMode ? "dark" : "light"
+            );
+
+
+            updateThemeIcon();
+
+        });
+
+
+
+        /* =========================
+           MEMUAT TEMA YANG TERSIMPAN
+        ========================== */
+
+        const savedTheme =
+            localStorage.getItem("theme");
+
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add("dark-mode");
+
+        }
+
+
+        updateThemeIcon();
+
 
     </script>
 
+
 </body>
+
 </html>
