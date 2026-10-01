@@ -192,6 +192,67 @@
 
 </nav>
     
+    /* NAVIGATION MENU */
+
+.navigation-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    width: 220px;
+    background: #fffdf8;
+    border: 1px solid #ddd5c8;
+    border-radius: 10px;
+    padding: 8px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+}
+
+.navigation-menu a,
+.menu-link {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border: none;
+    background: none;
+    color: #29251f;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.navigation-menu a:hover,
+.menu-link:hover {
+    background: #f3eee5;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    padding-left: 15px;
+}
+
+.submenu a {
+    font-size: 15px;
+    padding: 10px 16px;
+}
+
+/* Saat menu utama dibuka */
+.navigation-menu.active {
+    display: block;
+}
+
+/* Saat submenu Novel dibuka */
+.menu-item.active .submenu {
+    display: block;
+}
+
     
     <!-- SEARCH -->
     <div class="search-container">
@@ -287,7 +348,27 @@
             © Copyright 2026-CN Novel-Translation
         </div>
 
-    </footer>
+        </footer>
+
+
+    <script>
+
+        const menuButton = document.querySelector(".menu-button");
+        const navigationMenu = document.querySelector(".navigation-menu");
+
+        menuButton.addEventListener("click", function () {
+            navigationMenu.classList.toggle("active");
+        });
+
+
+        const novelMenu = document.querySelector(".menu-novel");
+        const novelButton = novelMenu.querySelector(".menu-link");
+
+        novelButton.addEventListener("click", function () {
+            novelMenu.classList.toggle("active");
+        });
+
+    </script>
 
 </body>
 </html>
