@@ -10,7 +10,7 @@
     <title>CN Novel-Translation</title>
 
 
-    <!-- FONT KHUSUS NAMA WEBSITE -->
+    <!-- FONT NAMA WEBSITE -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -152,7 +152,7 @@
 
 
         /* =========================
-           MENU NAVIGASI
+           MENU
         ========================= */
 
         .navigation-menu {
@@ -342,6 +342,10 @@
         }
 
 
+        /* =========================
+           NOVEL BOX
+        ========================= */
+
         .novel-box {
 
             background: #ffffff;
@@ -393,6 +397,110 @@
 
 
         /* =========================
+           PAGINATION
+        ========================= */
+
+        .pagination-container {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin-top: 24px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #e5e7eb;
+
+        }
+
+
+        .pagination-button {
+
+            min-width: 38px;
+
+            height: 36px;
+
+            padding: 0 10px;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 7px;
+
+            background: #ffffff;
+
+            color: #1f2937;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease;
+
+        }
+
+
+        .pagination-button:hover {
+
+            border-color: #7c3aed;
+
+            color: #7c3aed;
+
+        }
+
+
+        .pagination-button.active {
+
+            background: #7c3aed;
+
+            border-color: #7c3aed;
+
+            color: #ffffff;
+
+        }
+
+
+        .pagination-button.disabled {
+
+            opacity: 0.45;
+
+            cursor: default;
+
+        }
+
+
+        /* =========================
+           HASIL SEARCH
+        ========================= */
+
+        .search-results {
+
+            display: none;
+
+        }
+
+
+        .search-message {
+
+            padding: 20px;
+
+            text-align: center;
+
+            color: #6b7280;
+
+        }
+
+
+        /* =========================
            FOOTER
         ========================= */
 
@@ -414,8 +522,6 @@
 
         }
 
-
-        /* FONT KHUSUS NAMA WEBSITE DI FOOTER */
 
         footer .footer-title {
 
@@ -453,7 +559,7 @@
         }
 
 
-        /* COPYRIGHT TETAP FONT LAMA */
+        /* COPYRIGHT FONT TETAP */
 
         footer .copyright {
 
@@ -483,7 +589,8 @@
         body.dark-mode footer,
         body.dark-mode .novel-box,
         body.dark-mode .search-box,
-        body.dark-mode .navigation-menu {
+        body.dark-mode .navigation-menu,
+        body.dark-mode .pagination-button {
 
             background: #1f2937;
 
@@ -493,7 +600,8 @@
         body.dark-mode header,
         body.dark-mode footer,
         body.dark-mode .novel-box,
-        body.dark-mode .navigation-menu {
+        body.dark-mode .navigation-menu,
+        body.dark-mode .pagination-container {
 
             border-color: #374151;
 
@@ -562,9 +670,39 @@
 
 
         body.dark-mode .novel-info,
+        body.dark-mode .search-message,
         body.dark-mode footer .copyright {
 
             color: #9ca3af;
+
+        }
+
+
+        body.dark-mode .pagination-button {
+
+            border-color: #374151;
+
+            color: #f3f4f6;
+
+        }
+
+
+        body.dark-mode .pagination-button:hover {
+
+            border-color: #8b5cf6;
+
+            color: #a78bfa;
+
+        }
+
+
+        body.dark-mode .pagination-button.active {
+
+            background: #8b5cf6;
+
+            border-color: #8b5cf6;
+
+            color: #ffffff;
 
         }
 
@@ -763,114 +901,78 @@
     <main>
 
 
-        <!-- NOVEL RANDOM -->
+        <!-- =========================
+             HALAMAN UTAMA
+        ========================== -->
 
-        <section>
+        <div id="home-content">
+
+
+            <!-- NOVEL RANDOM -->
+
+            <section>
+
+
+                <h2 class="section-title">
+
+                    Novel Random
+
+                </h2>
+
+
+                <div id="random-list"></div>
+
+
+            </section>
+
+
+
+            <!-- LATEST UPDATE -->
+
+            <section>
+
+
+                <h2 class="section-title">
+
+                    Latest Update
+
+                </h2>
+
+
+                <div id="latest-list"></div>
+
+
+                <div
+                    id="pagination"
+                    class="pagination-container"
+                ></div>
+
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             HASIL SEARCH
+        ========================== -->
+
+        <section
+            id="search-results"
+            class="search-results"
+        >
 
 
             <h2 class="section-title">
 
-                Novel Random
+                Hasil Pencarian
 
             </h2>
 
 
-            <div class="novel-box">
-
-
-                <div class="novel-title">
-
-                    Contoh Novel Pertama
-
-                </div>
-
-
-                <div class="novel-info">
-
-                    Chapter 25 • Fantasy • On-going
-
-                </div>
-
-
-            </div>
-
-
-
-            <div class="novel-box">
-
-
-                <div class="novel-title">
-
-                    Contoh Novel Kedua
-
-                </div>
-
-
-                <div class="novel-info">
-
-                    Chapter 48 • Romance • Completed
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- LATEST UPDATE -->
-
-        <section>
-
-
-            <h2 class="section-title">
-
-                Latest Update
-
-            </h2>
-
-
-            <div class="novel-box">
-
-
-                <div class="novel-title">
-
-                    Contoh Novel Pertama
-
-                </div>
-
-
-                <div class="novel-info">
-
-                    Chapter 26 • Update terbaru
-
-                </div>
-
-
-            </div>
-
-
-
-            <div class="novel-box">
-
-
-                <div class="novel-title">
-
-                    Contoh Novel Ketiga
-
-                </div>
-
-
-                <div class="novel-info">
-
-                    Chapter 12 • Update terbaru
-
-                </div>
-
-
-            </div>
+            <div id="search-list"></div>
 
 
         </section>
@@ -928,6 +1030,546 @@
 
 
         /* =========================
+           DATA NOVEL
+        ========================= */
+
+        const novels = [
+
+            {
+                title: "Contoh Novel Pertama",
+                chapter: 26,
+                genre: "Fantasy",
+                status: "On-going"
+            },
+
+            {
+                title: "Contoh Novel Kedua",
+                chapter: 48,
+                genre: "Romance",
+                status: "Completed"
+            },
+
+            {
+                title: "Contoh Novel Ketiga",
+                chapter: 12,
+                genre: "Xianxia",
+                status: "On-going"
+            },
+
+            {
+                title: "Journey of the Immortal",
+                chapter: 95,
+                genre: "Xianxia",
+                status: "On-going"
+            },
+
+            {
+                title: "The Heavenly Sword",
+                chapter: 73,
+                genre: "Wuxia",
+                status: "On-going"
+            },
+
+            {
+                title: "Rebirth of the Saintess",
+                chapter: 61,
+                genre: "Romance",
+                status: "On-going"
+            },
+
+            {
+                title: "Emperor of the Nine Heavens",
+                chapter: 88,
+                genre: "Xuanhuan",
+                status: "On-going"
+            },
+
+            {
+                title: "The Immortal's Return",
+                chapter: 54,
+                genre: "Xianxia",
+                status: "Hiatus"
+            },
+
+            {
+                title: "Sword of Endless Dreams",
+                chapter: 37,
+                genre: "Fantasy",
+                status: "On-going"
+            },
+
+            {
+                title: "A Saintess's Secret",
+                chapter: 42,
+                genre: "Romance",
+                status: "On-going"
+            },
+
+            {
+                title: "The Last Heavenly Emperor",
+                chapter: 120,
+                genre: "Xuanhuan",
+                status: "Completed"
+            },
+
+            {
+                title: "Path of the Azure Dragon",
+                chapter: 67,
+                genre: "Xianxia",
+                status: "On-going"
+            },
+
+            {
+                title: "Moonlight Over the Immortal Realm",
+                chapter: 31,
+                genre: "Romance",
+                status: "On-going"
+            },
+
+            {
+                title: "The Hidden Sect",
+                chapter: 76,
+                genre: "Xianxia",
+                status: "On-going"
+            },
+
+            {
+                title: "Legend of the Fallen Star",
+                chapter: 28,
+                genre: "Fantasy",
+                status: "Hiatus"
+            },
+
+            {
+                title: "The Reborn Swordmaster",
+                chapter: 83,
+                genre: "Wuxia",
+                status: "On-going"
+            },
+
+            {
+                title: "Eternal Dream",
+                chapter: 46,
+                genre: "Fantasy",
+                status: "On-going"
+            },
+
+            {
+                title: "The Villain's Dao",
+                chapter: 59,
+                genre: "Xuanhuan",
+                status: "On-going"
+            },
+
+            {
+                title: "Nine Realms Immortal",
+                chapter: 102,
+                genre: "Xianxia",
+                status: "On-going"
+            },
+
+            {
+                title: "The Jade Palace",
+                chapter: 25,
+                genre: "Romance",
+                status: "Completed"
+            },
+
+            {
+                title: "Beyond the Mortal World",
+                chapter: 69,
+                genre: "Xianxia",
+                status: "On-going"
+            },
+
+            {
+                title: "The Nameless Immortal",
+                chapter: 33,
+                genre: "Xianxia",
+                status: "On-going"
+            }
+
+
+        ];
+
+
+        /* =========================
+           ELEMEN HALAMAN
+        ========================== */
+
+        const randomList =
+            document.getElementById("random-list");
+
+        const latestList =
+            document.getElementById("latest-list");
+
+        const pagination =
+            document.getElementById("pagination");
+
+        const searchBox =
+            document.querySelector(".search-box");
+
+        const homeContent =
+            document.getElementById("home-content");
+
+        const searchResults =
+            document.getElementById("search-results");
+
+        const searchList =
+            document.getElementById("search-list");
+
+
+        /* =========================
+           JUMLAH NOVEL PER HALAMAN
+        ========================== */
+
+        const itemsPerPage = 10;
+
+        let currentPage = 1;
+
+
+        /* =========================
+           MEMBUAT CARD NOVEL
+        ========================== */
+
+        function createNovelCard(novel) {
+
+            return `
+
+                <div class="novel-box">
+
+                    <div class="novel-title">
+
+                        ${novel.title}
+
+                    </div>
+
+                    <div class="novel-info">
+
+                        Chapter ${novel.chapter}
+                        •
+                        ${novel.genre}
+                        •
+                        ${novel.status}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* =========================
+           NOVEL RANDOM
+        ========================== */
+
+        function renderRandom() {
+
+            const shuffled =
+                [...novels].sort(
+                    () => Math.random() - 0.5
+                );
+
+
+            const randomNovels =
+                shuffled.slice(0, 3);
+
+
+            randomList.innerHTML =
+                randomNovels
+                    .map(createNovelCard)
+                    .join("");
+
+        }
+
+
+        /* =========================
+           LATEST UPDATE
+        ========================== */
+
+        function renderLatest() {
+
+            const totalPages =
+                Math.ceil(
+                    novels.length / itemsPerPage
+                );
+
+
+            if (currentPage > totalPages) {
+
+                currentPage = totalPages;
+
+            }
+
+
+            const start =
+                (currentPage - 1) * itemsPerPage;
+
+
+            const end =
+                start + itemsPerPage;
+
+
+            const pageNovels =
+                novels.slice(start, end);
+
+
+            latestList.innerHTML =
+                pageNovels
+                    .map(createNovelCard)
+                    .join("");
+
+
+            renderPagination(totalPages);
+
+        }
+
+
+        /* =========================
+           PAGINATION
+        ========================== */
+
+        function renderPagination(totalPages) {
+
+            pagination.innerHTML = "";
+
+
+            if (totalPages <= 1) {
+
+                return;
+
+            }
+
+
+            /* SEBELUMNYA */
+
+            const previous =
+                document.createElement("button");
+
+
+            previous.className =
+                "pagination-button";
+
+
+            previous.textContent =
+                "Sebelumnya";
+
+
+            previous.disabled =
+                currentPage === 1;
+
+
+            if (currentPage === 1) {
+
+                previous.classList.add("disabled");
+
+            }
+
+
+            previous.addEventListener(
+                "click",
+                function () {
+
+                    if (currentPage > 1) {
+
+                        currentPage--;
+
+                        renderLatest();
+
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        });
+
+                    }
+
+                }
+            );
+
+
+            pagination.appendChild(previous);
+
+
+            /* NOMOR HALAMAN */
+
+            for (
+                let page = 1;
+                page <= totalPages;
+                page++
+            ) {
+
+                const button =
+                    document.createElement("button");
+
+
+                button.className =
+                    "pagination-button";
+
+
+                button.textContent =
+                    page;
+
+
+                if (page === currentPage) {
+
+                    button.classList.add("active");
+
+                }
+
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        currentPage = page;
+
+                        renderLatest();
+
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        });
+
+                    }
+                );
+
+
+                pagination.appendChild(button);
+
+            }
+
+
+            /* BERIKUTNYA */
+
+            const next =
+                document.createElement("button");
+
+
+            next.className =
+                "pagination-button";
+
+
+            next.textContent =
+                "Berikutnya";
+
+
+            next.disabled =
+                currentPage === totalPages;
+
+
+            if (currentPage === totalPages) {
+
+                next.classList.add("disabled");
+
+            }
+
+
+            next.addEventListener(
+                "click",
+                function () {
+
+                    if (currentPage < totalPages) {
+
+                        currentPage++;
+
+                        renderLatest();
+
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        });
+
+                    }
+
+                }
+            );
+
+
+            pagination.appendChild(next);
+
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================== */
+
+        searchBox.addEventListener(
+            "input",
+            function () {
+
+                const keyword =
+                    searchBox.value
+                        .trim()
+                        .toLowerCase();
+
+
+                /* KOSONG = KEMBALI KE HOME */
+
+                if (keyword === "") {
+
+                    homeContent.style.display =
+                        "block";
+
+                    searchResults.style.display =
+                        "none";
+
+                    return;
+
+                }
+
+
+                /* FILTER JUDUL */
+
+                const results =
+                    novels.filter(
+                        function (novel) {
+
+                            return novel.title
+                                .toLowerCase()
+                                .includes(keyword);
+
+                        }
+                    );
+
+
+                homeContent.style.display =
+                    "none";
+
+
+                searchResults.style.display =
+                    "block";
+
+
+                if (results.length === 0) {
+
+                    searchList.innerHTML = `
+
+                        <div class="search-message">
+
+                            Novel tidak ditemukan.
+
+                        </div>
+
+                    `;
+
+                    return;
+
+                }
+
+
+                searchList.innerHTML =
+                    results
+                        .map(createNovelCard)
+                        .join("");
+
+            }
+        );
+
+
+        /* =========================
            MENU UTAMA
         ========================= */
 
@@ -938,19 +1580,22 @@
             document.querySelector(".navigation-menu");
 
 
-        menuButton.addEventListener("click", function () {
+        menuButton.addEventListener(
+            "click",
+            function () {
 
-            const isOpen =
-                navigationMenu.classList.toggle("active");
+                const isOpen =
+                    navigationMenu.classList
+                        .toggle("active");
 
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                );
 
-        });
-
+            }
+        );
 
 
         /* =========================
@@ -964,45 +1609,55 @@
             novelMenu.querySelector(".menu-link");
 
 
-        novelButton.addEventListener("click", function () {
+        novelButton.addEventListener(
+            "click",
+            function () {
 
-            novelMenu.classList.toggle("active");
+                novelMenu.classList
+                    .toggle("active");
 
-        });
-
+            }
+        );
 
 
         /* =========================
-           TUTUP MENU SAAT KLIK DI LUAR
+           TUTUP MENU
         ========================= */
 
-        document.addEventListener("click", function (event) {
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                const clickedInsideMenu =
+                    navigationMenu.contains(
+                        event.target
+                    );
 
 
-            const clickedInsideMenu =
-                navigationMenu.contains(event.target);
+                const clickedMenuButton =
+                    menuButton.contains(
+                        event.target
+                    );
 
 
-            const clickedMenuButton =
-                menuButton.contains(event.target);
+                if (
+                    !clickedInsideMenu &&
+                    !clickedMenuButton
+                ) {
+
+                    navigationMenu.classList
+                        .remove("active");
 
 
-            if (
-                !clickedInsideMenu &&
-                !clickedMenuButton
-            ) {
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
-                navigationMenu.classList.remove("active");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+                }
 
             }
-
-        });
-
+        );
 
 
         /* =========================
@@ -1015,46 +1670,53 @@
 
         function updateThemeIcon() {
 
-
             if (
-                document.body.classList.contains("dark-mode")
+                document.body.classList
+                    .contains("dark-mode")
             ) {
 
-                themeButton.textContent = "☾";
+                themeButton.textContent =
+                    "☾";
 
             } else {
 
-                themeButton.textContent = "☀";
+                themeButton.textContent =
+                    "☀";
 
             }
 
         }
 
 
-        themeButton.addEventListener("click", function () {
+        themeButton.addEventListener(
+            "click",
+            function () {
+
+                document.body.classList
+                    .toggle("dark-mode");
 
 
-            document.body.classList.toggle("dark-mode");
+                const darkMode =
+                    document.body.classList
+                        .contains("dark-mode");
 
 
-            const darkMode =
-                document.body.classList.contains("dark-mode");
+                localStorage.setItem(
+                    "theme",
+                    darkMode
+                        ? "dark"
+                        : "light"
+                );
 
 
-            localStorage.setItem(
-                "theme",
-                darkMode ? "dark" : "light"
-            );
+                updateThemeIcon();
 
-
-            updateThemeIcon();
-
-        });
-
+            }
+        );
 
 
         /* =========================
-           MEMUAT TEMA YANG TERSIMPAN
+           MEMUAT TEMA
         ========================== */
 
         const savedTheme =
@@ -1063,12 +1725,21 @@
 
         if (savedTheme === "dark") {
 
-            document.body.classList.add("dark-mode");
+            document.body.classList
+                .add("dark-mode");
 
         }
 
 
+        /* =========================
+           TAMPILAN AWAL
+        ========================== */
+
         updateThemeIcon();
+
+        renderRandom();
+
+        renderLatest();
 
 
     </script>
