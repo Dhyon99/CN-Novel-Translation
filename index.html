@@ -10,6 +10,18 @@
     <title>CN Novel-Translation</title>
 
 
+    <!-- FONT KHUSUS NAMA WEBSITE -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
     <style>
 
         /* =========================
@@ -20,17 +32,26 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
+
             margin: 0;
+
             font-family: Arial, sans-serif;
-            background: #f5f0e6;
-            color: #29251f;
-            transition: background 0.25s ease,
-                        color 0.25s ease;
+
+            background: #f3f4f6;
+
+            color: #1f2937;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease;
+
         }
 
 
@@ -39,24 +60,29 @@
         ========================= */
 
         header {
+
             height: 60px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
             padding: 0 18px;
 
-            background: #fffdf8;
+            background: #ffffff;
 
-            border-bottom: 1px solid #ddd5c8;
+            border-bottom: 1px solid #e5e7eb;
 
             position: relative;
 
             z-index: 2000;
 
-            transition: background 0.25s ease,
-                        border-color 0.25s ease;
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease;
+
         }
 
 
@@ -64,6 +90,7 @@
         .theme-button {
 
             width: 45px;
+
             height: 45px;
 
             border: none;
@@ -79,30 +106,47 @@
             border-radius: 8px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
-            transition: background 0.2s ease;
+            transition:
+                background 0.2s ease;
+
         }
 
 
         .menu-button:hover,
         .theme-button:hover {
 
-            background: rgba(0, 0, 0, 0.06);
+            background: rgba(124, 58, 237, 0.08);
 
         }
 
 
+        /* =========================
+           NAMA WEBSITE
+        ========================= */
+
         .site-title {
 
-            font-size: 20px;
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
 
-            font-weight: bold;
+            font-size: 23px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.3px;
 
             text-align: center;
 
             white-space: nowrap;
+
+            color: #1f2937;
 
         }
 
@@ -123,16 +167,16 @@
 
             width: 230px;
 
-            background: #fffdf8;
+            background: #ffffff;
 
-            border: 1px solid #ddd5c8;
+            border: 1px solid #e5e7eb;
 
             border-radius: 10px;
 
             padding: 8px 0;
 
             box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.12);
+                0 8px 25px rgba(17, 24, 39, 0.12);
 
             z-index: 3000;
 
@@ -165,7 +209,7 @@
 
             background: transparent;
 
-            color: #29251f;
+            color: #1f2937;
 
             text-decoration: none;
 
@@ -181,7 +225,9 @@
         .navigation-menu a:hover,
         .menu-link:hover {
 
-            background: #f3eee5;
+            background: #f3f0ff;
+
+            color: #7c3aed;
 
         }
 
@@ -239,13 +285,13 @@
 
             padding: 13px 16px;
 
-            border: 1px solid #d5cec2;
+            border: 1px solid #e5e7eb;
 
             border-radius: 8px;
 
-            background: #fffdf8;
+            background: #ffffff;
 
-            color: #29251f;
+            color: #1f2937;
 
             font-size: 16px;
 
@@ -254,14 +300,18 @@
             transition:
                 background 0.25s ease,
                 color 0.25s ease,
-                border-color 0.25s ease;
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
 
         }
 
 
         .search-box:focus {
 
-            border-color: #999;
+            border-color: #7c3aed;
+
+            box-shadow:
+                0 0 0 3px rgba(124, 58, 237, 0.10);
 
         }
 
@@ -287,14 +337,16 @@
 
             margin: 15px 0;
 
+            color: #1f2937;
+
         }
 
 
         .novel-box {
 
-            background: #fffdf8;
+            background: #ffffff;
 
-            border: 1px solid #ddd5c8;
+            border: 1px solid #e5e7eb;
 
             border-radius: 10px;
 
@@ -304,7 +356,18 @@
 
             transition:
                 background 0.25s ease,
-                border-color 0.25s ease;
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+
+        }
+
+
+        .novel-box:hover {
+
+            border-color: #d8c7fa;
+
+            box-shadow:
+                0 4px 14px rgba(124, 58, 237, 0.06);
 
         }
 
@@ -324,7 +387,7 @@
 
             font-size: 14px;
 
-            color: #777;
+            color: #6b7280;
 
         }
 
@@ -341,9 +404,9 @@
 
             margin-top: 30px;
 
-            border-top: 1px solid #ddd5c8;
+            border-top: 1px solid #e5e7eb;
 
-            background: #fffdf8;
+            background: #ffffff;
 
             transition:
                 background 0.25s ease,
@@ -352,9 +415,20 @@
         }
 
 
+        /* FONT KHUSUS NAMA WEBSITE DI FOOTER */
+
         footer .footer-title {
 
-            font-weight: bold;
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            font-size: 20px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.3px;
 
             margin-bottom: 12px;
 
@@ -372,10 +446,14 @@
 
         footer a:hover {
 
+            color: #7c3aed;
+
             text-decoration: underline;
 
         }
 
+
+        /* COPYRIGHT TETAP FONT LAMA */
 
         footer .copyright {
 
@@ -383,20 +461,20 @@
 
             font-size: 14px;
 
-            color: #777;
+            color: #6b7280;
 
         }
 
 
         /* =========================
-           TEMA GELAP
+           DARK MODE
         ========================= */
 
         body.dark-mode {
 
-            background: #171614;
+            background: #111827;
 
-            color: #eee9df;
+            color: #f3f4f6;
 
         }
 
@@ -407,7 +485,7 @@
         body.dark-mode .search-box,
         body.dark-mode .navigation-menu {
 
-            background: #24221f;
+            background: #1f2937;
 
         }
 
@@ -417,16 +495,33 @@
         body.dark-mode .novel-box,
         body.dark-mode .navigation-menu {
 
-            border-color: #403c36;
+            border-color: #374151;
+
+        }
+
+
+        body.dark-mode .site-title {
+
+            color: #f3f4f6;
 
         }
 
 
         body.dark-mode .search-box {
 
-            border-color: #403c36;
+            border-color: #374151;
 
-            color: #eee9df;
+            color: #f3f4f6;
+
+        }
+
+
+        body.dark-mode .search-box:focus {
+
+            border-color: #8b5cf6;
+
+            box-shadow:
+                0 0 0 3px rgba(139, 92, 246, 0.15);
 
         }
 
@@ -434,7 +529,7 @@
         body.dark-mode .navigation-menu a,
         body.dark-mode .menu-link {
 
-            color: #eee9df;
+            color: #f3f4f6;
 
         }
 
@@ -442,7 +537,26 @@
         body.dark-mode .navigation-menu a:hover,
         body.dark-mode .menu-link:hover {
 
-            background: #302d29;
+            background: #2d2345;
+
+            color: #a78bfa;
+
+        }
+
+
+        body.dark-mode .section-title {
+
+            color: #f3f4f6;
+
+        }
+
+
+        body.dark-mode .novel-box:hover {
+
+            border-color: #6d4bb5;
+
+            box-shadow:
+                0 4px 14px rgba(139, 92, 246, 0.10);
 
         }
 
@@ -450,7 +564,14 @@
         body.dark-mode .novel-info,
         body.dark-mode footer .copyright {
 
-            color: #aaa39a;
+            color: #9ca3af;
+
+        }
+
+
+        body.dark-mode footer a:hover {
+
+            color: #a78bfa;
 
         }
 
@@ -458,7 +579,7 @@
         body.dark-mode .menu-button:hover,
         body.dark-mode .theme-button:hover {
 
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(139, 92, 246, 0.12);
 
         }
 
@@ -489,7 +610,7 @@
 
             .site-title {
 
-                font-size: 22px;
+                font-size: 25px;
 
             }
 
@@ -808,7 +929,7 @@
 
         /* =========================
            MENU UTAMA
-        ========================== */
+        ========================= */
 
         const menuButton =
             document.querySelector(".menu-button");
@@ -834,7 +955,7 @@
 
         /* =========================
            SUBMENU NOVEL
-        ========================== */
+        ========================= */
 
         const novelMenu =
             document.querySelector(".menu-novel");
@@ -853,7 +974,7 @@
 
         /* =========================
            TUTUP MENU SAAT KLIK DI LUAR
-        ========================== */
+        ========================= */
 
         document.addEventListener("click", function (event) {
 
@@ -886,7 +1007,7 @@
 
         /* =========================
            LIGHT / DARK MODE
-        ========================== */
+        ========================= */
 
         const themeButton =
             document.querySelector(".theme-button");
